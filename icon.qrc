@@ -1,0 +1,40 @@
+<RCC>
+    <qresource prefix="/weather">
+        <file>scr/中雨.png</file>
+        <file>scr/中雪.png</file>
+        <file>scr/冻雨.png</file>
+        <file>scr/多云.png</file>
+        <file>scr/大暴雨.png</file>
+        <file>scr/大雨.png</file>
+        <file>scr/大雪.png</file>
+        <file>scr/小雨.png</file>
+        <file>scr/小雪.png</file>
+        <file>scr/强沙尘暴.png</file>
+        <file>scr/扬沙.png</file>
+        <file>scr/晴.png</file>
+        <file>scr/暴雨.png</file>
+        <file>scr/暴雪.png</file>
+        <file>scr/浮尘.png</file>
+        <file>scr/特大暴雨.png</file>
+        <file>scr/阴.png</file>
+        <file>scr/阵雨.png</file>
+        <file>scr/阵雪.png</file>
+        <file>scr/雨夹雪.png</file>
+        <file>scr/雷阵雨.png</file>
+        <file>scr/雷阵雨伴有冰雹.png</file>
+        <file>scr/雾.png</file>
+        <file>scr/霾.png</file>
+    </qresource>
+    <qresource prefix="/system">
+        <file>scr/delete.png</file>
+        <file>scr/play.png</file>
+        <file>scr/poweroff.png</file>
+        <file>scr/reboot.png</file>
+        <file>scr/refresh.png</file>
+        <file>scr/splash.png</file>
+        <file>scr/next.png</file>
+        <file>scr/previous.png</file>
+        <file>scr/ok.png</file>
+        <file>scr/redo.png</file>
+    </qresource>
+</RCC>
