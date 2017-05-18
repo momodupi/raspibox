@@ -148,13 +148,14 @@ MainWindow::MainWindow(QWidget *parent) :
     manager = new QNetworkAccessManager(this);
     //weather API
     //weatherURL_1 = "http://wthrcdn.etouch.cn/weather_mini?city=";
-    weatherURL = "http://wthrcdn.etouch.cn/WeatherApi?city=";
+    //weatherURL = "http://wthrcdn.etouch.cn/WeatherApi?city=";
     connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replayFinished(QNetworkReply*)));
     //locating based on IP address
     //weathertype = 0;
     //manager->get(QNetworkRequest(QUrl("http://int.dpool.sina.com.cn/iplookup/iplookup.php")));
     city = DEFAULTCITY;
-    QString url = weatherURL + city;
+    //QString url = weatherURL + city;
+    QString url = "http://wthrcdn.etouch.cn/WeatherApi?citykey=101070101";
     manager->get(QNetworkRequest(QUrl(url)));
 
     QDateTime time = QDateTime::currentDateTime();
