@@ -1,13 +1,24 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#define RASPBERRY
+
 
 #define DEFAULTCITY             "沈阳"
+
+#ifdef RASPBERRY
+
 #define VIDEODIR_PATH           "/mnt/disk/Videos"
 #define VIDEOSNAPDIR_PATH       "/mnt/disk/Videos/snap"
 #define PICTUREDIR_PATH         "/mnt/disk/Pictures"
-#define MNTSOURCEDIR_PATH      "/dev/sda1"
-#define MNTTARGETDIR_PATH      "/mnt/disk"
+
+#else
+
+#define VIDEODIR_PATH           "/mnt/hgfs/HomeGroup"
+#define VIDEOSNAPDIR_PATH       "/home/momodupi/Pictures/snap"
+#define PICTUREDIR_PATH         "/home/momodupi/Pictures"
+
+#endif
 
 enum emainstackwidegt
 {
@@ -283,7 +294,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->videosnaplabel->setStyleSheet("color:#d4d4d4");
         ui->videosnaplabel->setFont(QFont("San Serif", 12));
         ui->videosnaplabel->setAlignment(Qt::AlignCenter);
-        ui->videosnaplabel->setText("rm/rmvb格式可能会存在卡顿");
+        ui->videosnaplabel->setText("rm/rmvb格式会存在卡顿");
     }
     QGraphicsDropShadowEffect *videosnaplabel_shadoweffect = new QGraphicsDropShadowEffect(this);
     videosnaplabel_shadoweffect->setOffset(0, 0);
@@ -314,7 +325,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->videoplayButton->setStyleSheet("color:#d4d4d4; background-color:#424242");
     ui->videoplayButton->setText("");
-    ui->videoplayButton->setIcon(QIcon(":/system/scr/play.png"));
+    ui->videoplayButton->setIcon(QIcon(":/system/src/play.png"));
     QGraphicsDropShadowEffect *videoplayButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     videoplayButton_shadoweffect->setOffset(0, 0);
     videoplayButton_shadoweffect->setColor("#212121");
@@ -323,7 +334,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->videodeleteButton->setStyleSheet("color:#d4d4d4; background-color:#424242");
     ui->videodeleteButton->setText("");
-    ui->videodeleteButton->setIcon(QIcon(":/system/scr/delete.png"));
+    ui->videodeleteButton->setIcon(QIcon(":/system/src/delete.png"));
     ui->videodeleteButton->setFont(QFont("San Serif", 14));
     QGraphicsDropShadowEffect *videodeleteButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     videodeleteButton_shadoweffect->setOffset(0, 0);
@@ -333,7 +344,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->videorefreshButton->setStyleSheet("color:#d4d4d4; background-color:#424242");
     ui->videorefreshButton->setText("");
-    ui->videorefreshButton->setIcon(QIcon(":/system/scr/refresh.png"));
+    ui->videorefreshButton->setIcon(QIcon(":/system/src/refresh.png"));
     ui->videorefreshButton->setFont(QFont("San Serif", 14));
     QGraphicsDropShadowEffect *videorefreshButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     videorefreshButton_shadoweffect->setOffset(0, 0);
@@ -534,7 +545,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->poweroffButton->setStyleSheet("color:#424242; background-color:#01579b");
     ui->poweroffButton->setText("");
-    ui->poweroffButton->setIcon(QIcon(":/system/scr/poweroff.png"));
+    ui->poweroffButton->setIcon(QIcon(":/system/src/poweroff.png"));
     QGraphicsDropShadowEffect *poweroffButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     poweroffButton_shadoweffect->setOffset(0, 0);
     poweroffButton_shadoweffect->setColor("#01579b");
@@ -543,7 +554,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->rebootButton->setStyleSheet("color:#d4d4d4; background-color:#01579b");
     ui->rebootButton->setText("");
-    ui->rebootButton->setIcon(QIcon(":/system/scr/reboot.png"));
+    ui->rebootButton->setIcon(QIcon(":/system/src/reboot.png"));
     QGraphicsDropShadowEffect *rebootButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     rebootButton_shadoweffect->setOffset(0, 0);
     rebootButton_shadoweffect->setColor("#01579b");
@@ -602,7 +613,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->settingsaveButton->setStyleSheet("color:#d4d4d4; background-color:#616161");
     ui->settingsaveButton->setText("");
-    ui->settingsaveButton->setIcon(QIcon(":/system/scr/ok.png"));
+    ui->settingsaveButton->setIcon(QIcon(":/system/src/ok.png"));
     QGraphicsDropShadowEffect *settingsaveButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     settingsaveButton_shadoweffect->setOffset(0, 0);
     settingsaveButton_shadoweffect->setColor("#757575");
@@ -611,7 +622,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->settingredoButton->setStyleSheet("color:#d4d4d4; background-color:#616161");
     ui->settingredoButton->setText("");
-    ui->settingredoButton->setIcon(QIcon(":/system/scr/redo.png"));
+    ui->settingredoButton->setIcon(QIcon(":/system/src/redo.png"));
     QGraphicsDropShadowEffect *settingredoButton_shadoweffect = new QGraphicsDropShadowEffect(this);
     settingredoButton_shadoweffect->setOffset(0, 0);
     settingredoButton_shadoweffect->setColor("#757575");
@@ -795,7 +806,7 @@ void MainWindow::parseXml(QString Xml)
     //ui->weatherbglabel->setText(weathernow.weatherforecast[0].date + weathernow.weatherforecast[0].type + weathernow.weatherforecast[0].winddir);
     ui->citylabel->setText(weathernow.city);
     ui->tempnowlabel->setText(weathernow.temperature + "°");
-    ui->weatherpiclabel->setPixmap(QPixmap(":/weather/scr/" + weathernow.weatherforecast[0].type + ".png"));
+    ui->weatherpiclabel->setPixmap(QPixmap(":/weather/src/" + weathernow.weatherforecast[0].type + ".png"));
 
     bool ok;
     QString weatherAQIlevel;
