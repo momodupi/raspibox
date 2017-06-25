@@ -31,3 +31,5 @@ Thanks a lot for the contributors on github and csdn!</br>
 ## Change Log</br>
 ### 2017.2.20
 1. First version</br>
+### 2017.5.18
+1. repair weather API</br>
