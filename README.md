@@ -1,4 +1,4 @@
-# Raspibox!   --- a TV box based on raspberry 2b
+# Raspibox!   --- a TV box based on Raspberry
 Raspibox is a GUI for TV and NAS based on raspberry pi 2b, 
 it is just a rudimentary demo for myself since this is my first time try using raspberry and qt.</br>
 
